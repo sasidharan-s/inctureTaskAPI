@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Incture Invoice</title>
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+      header {
+        padding: 16px 8px;
+        border-bottom: 1px solid #eee;
+      }
+      .content {
+        padding: 0px 20px;
+      }
+      .content .title {
+        color: rgb(0, 136, 212);
+        text-align: center;
+      }
+
+      .date {
+        text-align: right;
+      }
+
+      .basicInfo {
+        margin-top: 40px;
+      }
+      .basicInfo table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        border: 1px solid #eee;
+      }
+      .basicInfo table thead tr th {
+        padding: 18px 0px;
+        background-color: rgb(0, 136, 212);
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        border: 1px solid #eee;
+        border-collapse: collapse;
+      }
+      .basicInfo table tbody tr td {
+        padding: 18px 0px;
+        border: 1px solid #eee;
+      }
+      .ROI {
+        font-weight: 700;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://incture.com/wp-content/uploads/2022/02/Incture-Logo-Blue-150x34-px.svg"
+        alt="Incture"
+      />
+    </header>
+    <main class="content">
+      <h2 class="title">Invoice</h2>
+      <p class="date">
+        <span class="label">Date</span>
+        <span class="seperator">:</span>
+        <span class="value">30/10/2024</span>
+      </p>
+      <section class="basicInfo">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Company name</th>
+              <th>Email</th>
+              <th>Invoices</th>
+              <th>Team size</th>
+              <th>Avg Salary</th>
+              <th>Savings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sasidharan</td>
+              <td>Indipro technologies</td>
+              <td>sasi@indipro.com</td>
+              <td>10000</td>
+              <td>20</td>
+              <td>50000</td>
+              <td>3000</td>
+            </tr>
+            <tr>
+              <td colspan="5"></td>
+              <td class="ROI">ROI</td>
+              <td>30</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
