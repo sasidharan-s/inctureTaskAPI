@@ -20,7 +20,7 @@ exports.sendEmail = async ({
 
     const pdfAttachment = {
       filename: "Invoice.pdf",
-      content: fs.createReadStream(filePath),
+      content: filePath,
     };
 
     const mailOptions = {

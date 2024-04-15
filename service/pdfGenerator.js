@@ -5,23 +5,14 @@ async function generatePDF(htmlContent, outputPath) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.setContent(htmlContent);
-  await page.pdf({ path: outputPath, format: "A4" });
+  // await page.pdf({ path: outputPath, format: "A4" });
+  const pdfBuffer = await page.pdf({
+    format: "A4",
+    printBackground: true,
+  });
   await browser.close();
+  return pdfBuffer;
 }
-
-// Example usage
-const htmlContent = `
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My PDF</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-    <p>This is a test PDF generated using Puppeteer.</p>
-</body>
-</html>
-`;
 
 let defaultLocation = path.join(__dirname, "../public/pdf");
 exports.createPDF = async (
@@ -31,8 +22,8 @@ exports.createPDF = async (
 ) => {
   try {
     let filePathWithName = `${location}/${fileName}`;
-    await generatePDF(htmlContent, filePathWithName);
-    return true;
+    let buffer = await generatePDF(htmlContent, filePathWithName);
+    return buffer;
   } catch (err) {
     console.log(err);
     return false;

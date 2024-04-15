@@ -64,15 +64,15 @@ exports.addUser = async (req, res, next) => {
     };
 
     let pdfContent = getPDFContent(user);
-    let fileStatus = await createPDF(pdfContent, fileName);
+    let file = await createPDF(pdfContent, fileName);
     let filePath = path.join(__dirname, `../public/pdf/${fileName}`);
 
-    if (fileStatus) {
+    if (file) {
       let response = await insertUser(user);
       if (response) {
         await sendEmail({
           to: user.email,
-          filePath: filePath,
+          filePath: file,
           text: `Dear ${user.name} thank you choosing us here is your invoice. We are waiting to work with you.`,
         });
         return res.send({
